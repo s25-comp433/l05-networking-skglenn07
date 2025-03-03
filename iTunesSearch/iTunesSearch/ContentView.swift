@@ -45,7 +45,6 @@ struct ContentView: View {
         } catch {
             print("Invalid data")
         }
-        
     }
 }
 

@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-//struct Response: Codable {
+// struct Response: Codable {
 //    var games: [Game]
-//}
-
-
+// }
 
 struct Game: Codable {
     var id: Int
@@ -31,9 +29,8 @@ struct ContentView: View {
 //    @State private var games = [Game]()
     @State private var games: [Game] = []
     
-    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             List(games, id: \.id) { game in
                 HStack {
                     VStack(alignment: .leading) {
@@ -59,8 +56,8 @@ struct ContentView: View {
         .task {
             await loadData()
         }
-        
     }
+
     func loadData() async {
         guard let url = URL(string: "https://api.samuelshi.com/uncbasketball") else {
             print("Invalid URL")
